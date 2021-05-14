@@ -4,17 +4,15 @@ provider "aws" {
 
 provider "random" {}
 
-resource "random_pet" "table_name" {}
+resource "random_pet" "vpc_name" {}
 
-resource "aws_dynamodb_table" "tfc_example_table" {
-  name = "${var.db_table_name}-${random_pet.table_name.id}"
+resource "aws_vpc" "testvpc" {
 
-  read_capacity  = var.db_read_capacity
-  write_capacity = var.db_write_capacity
-  hash_key       = "UUID"
-
-  attribute {
-    name = "UUID"
-    type = "S"
-  }
+    #定义ip块
+    cidr_block = var.vpc_cidr
+    #设置允许dns主机名
+	enable_dns_hostnames = true
+	#设置标签
+	tags = {Name = "${var.vpc_name}-${random_pet.vpc_name.id}"}
 }
+

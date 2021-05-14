@@ -1,19 +1,16 @@
 variable "aws_region" {
   type    = string
-  default = "us-west-1"
+  default = "cn-northwest-1"
 }
 
-variable "db_table_name" {
+variable "vpc_name" {
   type    = string
-  default = "terraform-learn"
+  default = "testvpc"
 }
 
-variable "db_read_capacity" {
-  type    = number
-  default = 1
+variable "vpc_cidr" {
+  type    = string
+  default = "10.0.0.0/16"
 }
 
-variable "db_write_capacity" {
-  type    = number
-  default = 1
-}
+
