@@ -3,7 +3,7 @@ provider "aws" {
    #AWS的访问密钥ID
     access_key = "${var.AID}"
     #AWS的访问密钥
-    secret_key = SID
+    secret_key = "${var.SID}"
 }
 
 provider "random" {}
