@@ -1,7 +1,7 @@
 provider "aws" {
   region = var.aws_region
    #AWS的访问密钥ID
-    access_key = "${var.AID}""
+    access_key = "${var.AID}"
     #AWS的访问密钥
     secret_key = SID
 }
