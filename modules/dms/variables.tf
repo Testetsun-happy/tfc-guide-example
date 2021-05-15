@@ -19,6 +19,9 @@ variable "port" {
 variable "database" {
   type    = string
 }
+variable "username" {
+  type    = string
+}
 variable "password" {
   type    = string
 }
