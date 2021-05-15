@@ -12,7 +12,7 @@ resource "aws_dms_endpoint" "source_sqlserver" {
   ssl_mode                    = var.enable_ssl
 
   tags = {
-    Name = aws_dms_endpoint.source_sqlserver.endpoint_id
+    Name = "dms-src-${var.application}-${var.env}-${var.name_suffix}"
   }
 
   username = "${var.username}"
