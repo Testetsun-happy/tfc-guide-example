@@ -1,3 +1,3 @@
-output "target_sqlserver" {
-  value = aws_dms_endpoint.source_sqlserver.endpoint_id
+output "aws_dms_endpoint" {
+  value = aws_dms_endpoint.target_sqlserver.endpoint_id
 }
