@@ -40,6 +40,7 @@ module endpoint_target2 {
   port = 1433
   username = "syngenta_cms_prd2"
   password="1234562"
+  enable_ssl = "require"
 }
 
 
