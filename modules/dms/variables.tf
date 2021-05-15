@@ -25,7 +25,8 @@ variable "username" {
 variable "password" {
   type    = string
 }
+#none | require | verify-ca | verify-full
 variable "enable_ssl" {
-  type    = bool
-  default = false
+  type    = string
+  default = "none"
 }
