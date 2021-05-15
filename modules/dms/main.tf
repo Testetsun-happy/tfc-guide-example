@@ -2,7 +2,7 @@
 
 resource "aws_dms_endpoint" "source_sqlserver" {
   database_name               = "${var.database}"
-  endpoint_id                 = "dms-src-${application}-${var.env}-${var.name_suffix}"
+  endpoint_id                 = "dms-src-${var.application}-${var.env}-${var.name_suffix}"
   endpoint_type               = "source"
   engine_name                 = "sqlserver"
   extra_connection_attributes = ""

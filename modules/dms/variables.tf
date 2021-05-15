@@ -1,3 +1,11 @@
+variable "application" {
+  type    = string
+}
+
+variable "env" {
+  type    = string
+}
+
 variable "name_suffix" {
   type    = string
 }

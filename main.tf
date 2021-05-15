@@ -1,6 +1,8 @@
 
 module dms {
   source = "./modules/dms" 
+  application = "${var.application}"
+  env = "${var.env}"
   // to be
   name_suffix = "azure-prd-0516"
   server= "cms.database.chinacloudapi.cn"
