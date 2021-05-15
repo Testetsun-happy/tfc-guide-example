@@ -12,7 +12,7 @@ resource "aws_dms_endpoint" "source_sqlserver" {
   ssl_mode                    = var.enable_ssl
 
   tags = {
-    Name = "${this.endpoint_id}"
+    Name = aws_dms_endpoint.source_sqlserver.endpoint_id
   }
 
   username = "test"
