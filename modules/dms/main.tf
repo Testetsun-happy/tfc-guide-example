@@ -15,5 +15,5 @@ resource "aws_dms_endpoint" "source_sqlserver" {
     Name = aws_dms_endpoint.source_sqlserver.endpoint_id
   }
 
-  username = "test"
+  username = "${var.username}"
 }
