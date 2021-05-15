@@ -10,7 +10,7 @@ module dms {
   database = "prod_0516"
   port = 1433
   username = "Syngenta-cms-prod"
-  password="12345"
+  password="123456"
 }
 
 
