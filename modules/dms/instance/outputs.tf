@@ -1,3 +1,3 @@
-output "aws_dms_endpoint" {
-  value = aws_dms_endpoint.target_sqlserver.endpoint_id
+output "aws_dms_instance" {
+  value = aws_dms_replication_instance.replication_instance.replication_instance_arn
 }

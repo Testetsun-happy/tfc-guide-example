@@ -44,7 +44,7 @@ module endpoint_target2 {
 }
 
 module dms_instance {
-  source = "./modules/dms/target" 
+  source = "./modules/dms/instance" 
   application = "${var.application}"
   env = "${var.env}"
   name_suffix = "-cms"
@@ -52,7 +52,7 @@ module dms_instance {
   az = "cn-northwest-1b"
   maintenance_window = "sun:10:30-sun:14:30"
   publicly_accessible = true
-  instance_class = "dms.t3.micro"
+  instance_class = "dms.t3.microg"
   subnet_group_id = "dms-subnet-group"
   security_group_id = "dms-miniprogram-dev"
 
