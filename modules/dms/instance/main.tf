@@ -1,8 +1,4 @@
 
-resource "aws_dms_replication_subnet_group" "subnet_group" {
-  replication_subnet_group_id  =
-
-}
 
 resource "aws_dms_replication_instance" "replication_instance" {
   allocated_storage            = var.storage
