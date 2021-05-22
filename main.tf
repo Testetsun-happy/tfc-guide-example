@@ -65,8 +65,8 @@ module dms_task_main {
   application = "${var.application}"
   env = "${var.env}"
   name_suffix = "cms"
-  source_endpoint_arn = endpoint_source.aws_dms_endpoint
-  target_endpoint_arn = endpoint_target.aws_dms_endpoint
+  source_endpoint_arn = module.endpoint_source.aws_dms_endpoint
+  target_endpoint_arn = module.endpoint_target.aws_dms_endpoint
   enable_validation = true
   rule = <<EOT
   {
