@@ -47,7 +47,7 @@ module dms_instance {
   source = "./modules/dms/instance" 
   application = "${var.application}"
   env = "${var.env}"
-  name_suffix = "-cms"
+  name_suffix = "cms"
   storage = 500
   az = "cn-northwest-1b"
   maintenance_window = "sun:10:30-sun:14:30"
