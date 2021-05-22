@@ -43,4 +43,20 @@ module endpoint_target2 {
   enable_ssl = "require"
 }
 
+module dms_instance {
+  source = "./modules/dms/target" 
+  application = "${var.application}"
+  env = "${var.env}"
+  name_suffix = "-cms"
+  storage = 500
+  az = "cn-northwest-1b"
+  maintenance_window = "sun:10:30-sun:14:30"
+  publicly_accessible = true
+  instance_class = "dms.t3.micro"
+  subnet_group_id = "dms-subnet-group"
+  security_group_id = "dms-miniprogram-dev"
+
+
+}
+
 
