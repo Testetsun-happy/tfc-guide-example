@@ -54,9 +54,7 @@ module dms_instance {
   publicly_accessible = true
   instance_class = "dms.t3.micro"
   subnet_group_id = "dms-subnet-group"
-  security_group_id = "dms-miniprogram-dev"
-
-
+  security_group_id = "sg-05348b93c3128a33d"
 }
 
 
