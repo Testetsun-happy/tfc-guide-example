@@ -18,7 +18,7 @@ variable "source_endpoint_arn" {
 }
 
 variable "target_endpoint_arn" {
-  type    = number
+  type    = string
 }
 
 variable "enable_validation" {
