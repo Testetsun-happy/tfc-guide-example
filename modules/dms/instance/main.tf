@@ -17,7 +17,7 @@ resource "aws_dms_replication_instance" "replication_instance" {
   publicly_accessible          = var.publicly_accessible
   replication_instance_class   = var.instance_class
   replication_instance_id      = "dms-inst-${var.application}-${var.env}-${var.name_suffix}"
-  replication_subnet_group_id  = data.aws_security_group.dms-subnet-group.security_group_id
+  replication_subnet_group_id  = data.aws_security_group.dms-subnet-group.id
 
   tags = {
     Name = "dms-inst-${var.application}-${var.env}-${var.name_suffix}"
