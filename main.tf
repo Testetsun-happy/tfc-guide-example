@@ -51,7 +51,7 @@ module dms_instance {
   engine_version = "3.4.4"
   storage = 500
   az = "cn-northwest-1b"
-  maintenance_window = "sun:10:30-sun:10:30"
+  maintenance_window = "sun:10:00-sun:10:30"
   publicly_accessible = true
   instance_class = "dms.t3.micro"
   subnet_group_id = "dms-subnet-group"
