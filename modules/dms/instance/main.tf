@@ -9,7 +9,7 @@ resource "aws_dms_replication_instance" "replication_instance" {
   apply_immediately            = true
   auto_minor_version_upgrade   = false
   availability_zone            = var.az
-  #engine_version               = "3.4.4"
+  engine_version               = var.engine_version
   #If you do not specify a value for kms_key_arn, then AWS DMS will use your default encryption key.
   #kms_key_arn                  = "arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012"
   multi_az                     = false

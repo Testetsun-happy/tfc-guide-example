@@ -10,6 +10,10 @@ variable "name_suffix" {
   type    = string
 }
 
+variable "engine_version" {
+  type    = string
+}
+
 variable "storage" {
   type    = number
 }
