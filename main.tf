@@ -65,7 +65,7 @@ module dms_task_main {
   application = "${var.application}"
   env = "${var.env}"
   name_suffix = "cms"
-  replication_instance_arn = module.dms_instance.aws_dms_replication_task1
+  replication_instance_arn = module.dms_instance.aws_dms_replication_task
   source_endpoint_arn = module.endpoint_source.aws_dms_endpoint
   target_endpoint_arn = module.endpoint_target.aws_dms_endpoint
   enable_validation = true
