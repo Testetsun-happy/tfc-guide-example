@@ -2,7 +2,7 @@
 resource "aws_dms_replication_task" "dms-task-main" {
   #cdc_start_time            = 1484346880
   migration_type            = "full-load"
-  replication_instance_arn  = aws_dms_replication_instance.replication_instance.replication_instance_arn
+  replication_instance_arn  = var.replication_instance_arn
   replication_task_id       = "dms-task-${var.application}-${var.env}-${var.name_suffix}"
   replication_task_settings = <<EOT
   {

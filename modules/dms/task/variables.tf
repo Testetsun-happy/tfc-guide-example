@@ -10,6 +10,9 @@ variable "name_suffix" {
   type    = string
 }
 
+variable "replication_instance_arn"{
+  type    = string
+}
 variable "source_endpoint_arn" {
   type    = string
 }
