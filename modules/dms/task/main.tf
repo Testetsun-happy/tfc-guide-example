@@ -126,7 +126,7 @@ resource "aws_dms_replication_task" "dms-task-main" {
             }
         ],
         "CloudWatchLogGroup": "${aws_cloudwatch_log_group.task_log.name}",
-        "CloudWatchLogStream": "dms-task-${random_uuid.cloudwatch_stream_name.reslut}"
+        "CloudWatchLogStream": "dms-task-${random_uuid.cloudwatch_stream_name.result}"
     },
     "ControlTablesSettings": {
         "historyTimeslotInMinutes": 5,
