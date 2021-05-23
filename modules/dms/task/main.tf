@@ -129,7 +129,8 @@ resource "aws_dms_replication_task" "dms-task-main" {
                 "Severity": "LOGGER_SEVERITY_DEFAULT"
             }
         ],
-        "CloudWatchLogGroup": "${aws_cloudwatch_log_group.task_log.name}"
+        "CloudWatchLogGroup": "${resource.aws_cloudwatch_log_group.task_log.name}",
+        "CloudWatchLogStream": "${resource.aws_cloudwatch_log_stream.task_log_stream.name}"
     },
     "ControlTablesSettings": {
         "historyTimeslotInMinutes": 5,
