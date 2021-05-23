@@ -1,3 +1,15 @@
+resource random_uuid cloudwatch_stream_name {
+  
+}
+
+resource "aws_cloudwatch_log_group" "task_log" {
+  name = "dms-task-${var.application}-${var.env}-${var.name_suffix}"
+
+  tags = {
+    Environment = var.env
+    Application = var.application
+  }
+}
 
 resource "aws_dms_replication_task" "dms-task-main" {
   #cdc_start_time            = 1484346880
@@ -113,8 +125,8 @@ resource "aws_dms_replication_task" "dms-task-main" {
                 "Severity": "LOGGER_SEVERITY_DEFAULT"
             }
         ],
-        "CloudWatchLogGroup": "dms-tasks-dms-inst-miniprogram-prod-0304-2",
-        "CloudWatchLogStream": "dms-task-MJ6OT4UZLWS6CXAVRRZ5CLYYDEVFPWZK223CXGQ"
+        "CloudWatchLogGroup": "${aws_cloudwatch_log_group.task_log.name}",
+        "CloudWatchLogStream": "dms-task-${random_uuid.cloudwatch_stream_name.reslut}"
     },
     "ControlTablesSettings": {
         "historyTimeslotInMinutes": 5,
