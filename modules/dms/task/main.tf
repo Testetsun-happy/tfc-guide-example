@@ -1,6 +1,4 @@
-resource random_uuid cloudwatch_stream_name {
-  
-}
+
 
 resource "aws_cloudwatch_log_group" "task_log" {
   name = "dms-task-${var.application}-${var.env}-${var.name_suffix}"
@@ -9,6 +7,12 @@ resource "aws_cloudwatch_log_group" "task_log" {
     Environment = var.env
     Application = var.application
   }
+}
+
+
+resource "aws_cloudwatch_log_stream" "task_log_stream" {
+  name           = "dms-task-${var.application}-${var.env}-${var.name_suffix}"
+  log_group_name = aws_cloudwatch_log_group.task_log.name
 }
 
 resource "aws_dms_replication_task" "dms-task-main" {
@@ -126,7 +130,7 @@ resource "aws_dms_replication_task" "dms-task-main" {
             }
         ],
         "CloudWatchLogGroup": "${aws_cloudwatch_log_group.task_log.name}",
-        "CloudWatchLogStream": "dms-task-${random_uuid.cloudwatch_stream_name.result}"
+        "CloudWatchLogStream": "${aws_cloudwatch_log_group.task_log_stream.name}"
     },
     "ControlTablesSettings": {
         "historyTimeslotInMinutes": 5,
